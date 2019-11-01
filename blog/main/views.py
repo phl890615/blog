@@ -1,10 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 
 def main(request):
     '''
-    Show 'Hello world!' in the main page
+    Render the main page
     '''
-    return HttpResponse('Welcome my world!')
+    context = {'like':'Django 很棒,但是我最愛月'}
+    return render(request, 'main/main.html', context)
+def about(request):
+    '''
+    Render the about page
+    '''
+    return render(request, 'main/about.html')  
 # Create your views here.
